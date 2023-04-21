@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2023 at 09:37 PM
+-- Generation Time: Apr 21, 2023 at 09:45 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -32,8 +32,8 @@ CREATE TABLE `applications` (
   `user_id` int(11) NOT NULL,
   `job_id` int(11) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp(),
-  `status` text NOT NULL DEFAULT 'pending',
-  `seen` text NOT NULL DEFAULT 'no'
+  `status` text DEFAULT NULL,
+  `seen` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -55,10 +55,10 @@ INSERT INTO `applications` (`id`, `user_id`, `job_id`, `date`, `status`, `seen`)
 CREATE TABLE `company` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `logo_url` text NOT NULL DEFAULT 'No logo found',
+  `logo_url` text DEFAULT NULL,
   `notifications` tinyint(1) NOT NULL DEFAULT 1,
   `direct_messages` tinyint(1) NOT NULL DEFAULT 1,
-  `company_description` text NOT NULL DEFAULT ''
+  `company_description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -270,11 +270,11 @@ CREATE TABLE `users` (
   `name` text NOT NULL,
   `email` text NOT NULL,
   `password` text NOT NULL,
-  `access_level` text NOT NULL DEFAULT 'NO_ACCESS',
+  `access_level` text DEFAULT NULL,
   `notifications` int(11) NOT NULL DEFAULT 1,
   `global_cv` tinyint(1) NOT NULL DEFAULT 1,
   `requires_setup` tinyint(1) DEFAULT 1,
-  `cv_ref` text NOT NULL DEFAULT ''
+  `cv_ref` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
