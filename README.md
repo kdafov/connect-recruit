@@ -33,15 +33,15 @@ Note: You can use Google's integrated panel to connect through SSH in the browse
 9. Verify the installation of Nginx by going to the public IP of your VM\
 **You should see the nginx homepage: "Welcome to nginx!"**
 10. Once verified, install the MariaDB database packages by running: `sudo apt install mariadb-server -y`
-11. Configure the database by running: `sudo mysql_secure_installation` and the following responses: \
- - Enter current password for root (enter for none): **leave emtpy** \
- - Set root password? [Y/n] : **y** \
- - New password: **password** \
- - Re-enter new password: **password** \
- - Remove anonymous users? [Y/n]: **y** \
- - Disallow root login remotely? [Y/n]: **y** \
- - Remove test database and access to it? [Y/n]: **y** \
- - Reload privilege tables now? [Y/n]: **y** \
+11. Configure the database by running: `sudo mysql_secure_installation` and the following responses: 
+ - Enter current password for root (enter for none): **leave emtpy** 
+ - Set root password? [Y/n] : **y** 
+ - New password: **password** 
+ - Re-enter new password: **password** 
+ - Remove anonymous users? [Y/n]: **y** 
+ - Disallow root login remotely? [Y/n]: **y** 
+ - Remove test database and access to it? [Y/n]: **y** 
+ - Reload privilege tables now? [Y/n]: **y** 
  
 12. Login to MariaDB by running: `sudo mysql -r -p` and enter the password set in the above step \
 You should see: `MariaDB [(none)]> `
@@ -51,49 +51,56 @@ You should see: `MariaDB [(none)]> `
 `GRANT ALL PRIVILEGES ON connect_db.* TO 'connect'@'localhost';` \
 `FLUSH PRIVILEGES;` \
 Type: `exit` to leave the MariaDB console
-14. Pull the Connect app's build repository into the VM: \
-- Run: `cd` \
-- Run: `mkdir app && cd app && git clone https://github.com/kdafov/connect-recruit.git` \
-- Run: `cd connect-recruit/` \
+14. Pull the Connect app's build repository into the VM: 
+- Run: `cd` 
+- Run: `mkdir app && cd app && git clone https://github.com/kdafov/connect-recruit.git` 
+- Run: `cd connect-recruit/` 
 15. Import the database premade file into the new MariaDB we just created by running: `mysql -u connect -p connect_db < connect_db.sql` and when asked for password just press enter (blank)
-16. Install NVM (Node Version Manager) and install Node and NPM by following the steps below: \
-- Run: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash` \
-- Close the Shell of the VM and re-open it (this will reset the environmental variables) and will setup the Node Version Manager \
-- Run: `nvm install 16.20.0` \
-- Check that you get values when you type both `node -v` and `npm -v` confirming the installation of Node and NPM is complete \
-17. Configure nginx to proxy all requests to the future server that will be run from NextJS by following the steps below: \
- - Run: `cd && cd app/connect-recruit/ && sudo rm /etc/nginx/sites-available/default` \
- - Run: `sudo cp default /etc/nginx/sites-available/` \
- - Run: `sudo nginx -t` and you should see the message `configuration file /etc/nginx/nginx.conf test is successful` \
+16. Install NVM (Node Version Manager) and install Node and NPM by following the steps below: 
+- Run: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash` 
+- Close the Shell of the VM and re-open it (this will reset the environmental variables) and will setup the Node Version Manager 
+- Run: `nvm install 16.20.0` 
+- Check that you get values when you type both `node -v` and `npm -v` confirming the installation of Node and NPM is complete 
+17. Configure nginx to proxy all requests to the future server that will be run from NextJS by following the steps below: 
+ - Run: `cd && cd app/connect-recruit/ && sudo rm /etc/nginx/sites-available/default` 
+ - Run: `sudo cp default /etc/nginx/sites-available/` 
+ - Run: `sudo nginx -t` and you should see the message `configuration file /etc/nginx/nginx.conf test is successful` 
  - Run `sudo systemctl restart nginx` \
-Verify your installation of the Nginx reverse proxy by going to the public IP of the VM and you should see `502 Bad Gateway` \
-18. Create and configure .env file \
- - Run: `cd src/` \
- - Run: `sudo nano .env` \
-When the prompt opens type the following information:\
- \
- ```
+Verify your installation of the Nginx reverse proxy by going to the public IP of the VM and you should see `502 Bad Gateway` 
+18. Create and configure .env file 
+ - Run: `cd src/` 
+ - Run: `sudo nano .env` 
+When the prompt opens type the following information:
+```
 ACCESS_TOKEN_SECRET=4zLkVtSxJyNh9XGmcPiFQfEDYgOw6u2a0Z1eWBnRp7o3b8AqHUMT5KICr
 REFRESH_TOKEN_SECRET=qMjK4dGp6JXUW1RPLAzHxIaS7h2EVyCculb8N3vOY0Bnts9TwiZo5QfDeF
 DB_HOST="localhost"
 DB_USER="connect"
 DB_PASSWORD=""
 DB_DATABASE="connect_db"
-``` \
-Press `Ctrl + X` followed by `y` button and `Enter` \
-18. Install NPM modules and run **development** server \
- - Run: `npm i` \
- - Run: `npm run dev` \
-19. Run build of the development server and go to production server version \
+```
+Press `Ctrl + X` followed by `y` button and `Enter` 
+18. Install NPM modules and run **development** server 
+ - Run: `npm i` 
+ - Run: `npm run dev` 
+19. Run build of the development server and go to production server version 
 {TODO}
 
 ## OPTION 2: Hosting the app locally on MacOS
 
 ### Prerequisites
 
-1. {TODO}
+1. NodeJS installed with NPM from `https://nodejs.org/en/download`
+2. MacOS system
 
 ### Setup
-
-{TODO}
+ --download, setup, database, env, npm i, run build, run start
+1. Download and Install XAMPP for macOS \
+Link: `https://www.apachefriends.org/download.html`
+2. Open XAMPP application (may appear as manager-osx)
+3. Go to `Manage Servers` tab and enable `MySQL Database`
+4. Wait for the status of `MySQL Database` to be set to `Running`
+5. Create a new folder on y
+6. Go to web address `localhost/phpmyadmin` and import the database file provided
+7. Ready 
  
