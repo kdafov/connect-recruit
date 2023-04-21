@@ -1,0 +1,246 @@
+.panelMain {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 2px solid #C0C0C0;
+    border-radius: 5px;
+    margin: 30px 0px;
+    max-width: 1050px;
+    height: 100vh;
+}
+
+.top {
+    height: calc(60% - 50px);
+    padding: 25px 20px;
+}
+
+.bottom {
+    height: calc(40% - 50px);
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.subTitle {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.savedParent {
+    width: calc(50% - 10px);
+    padding: 0px 10px 0px 0px;
+}
+
+.msgParent {
+    width: calc(50% - 10px);
+    padding: 0px 0px 0px 10px;
+}
+
+.jobUnseen, .job {
+    width: calc(100% - 45px);
+    display: flex;
+    flex-direction: row;
+    background: #F0F0F0;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.jobUnseen {
+    background: linear-gradient(to right, #ffa500 0%, #ffa500 10px, #f0f0f0 10px) !important;
+}
+
+.jobLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.jobHeader {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.jobSub {
+    font-size: 13.5px;
+    font-style: italic;
+}
+
+.jobPending, .jobRejected, .jobAccepted {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.jobPending {
+    color: #ce7400;
+}
+
+.jobRejected {
+    color: #ff0000;
+}
+
+.jobAccepted {
+    color: #017f01;
+}
+
+.applications {
+    height: 100%;
+}
+
+.applications, .saved, .msg {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.applications::-webkit-scrollbar, .saved::-webkit-scrollbar, .msg::-webkit-scrollbar {
+    display: none;
+}
+
+.savedBlock {
+    display: flex;
+    flex-direction: row;
+    background: #F0F0F0;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid;
+    margin: 10px 0px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.saved, .msg {
+    height: 230px;
+}
+
+.msgBlockNotify, .msgBlock {
+    display: flex;
+    flex-direction: column;
+    background: #F0F0F0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid;
+    margin: 10px 0px;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.msgBlockNotify {
+    background: linear-gradient(to right, #ffa500 0%, #ffa500 10px, #f0f0f0 10px) !important;
+}
+
+.preview {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.messageReply {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.messageReplySub {
+    width: 270px;
+    height: 400px;
+    background: #ffffff;
+    border: 2px solid #66b2ff;
+    border-radius: 7px;
+    padding: 20px 10px;
+}
+
+.mrsText {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.mrsReplybox {
+    font-family: "Montserrat", sans-serif !important;
+    resize: none;
+    width: calc(100% - 15px);
+    height: 140px;
+    margin: 15px 0px;
+    outline: none;
+    padding: 5px;
+}
+
+.mrsConv {
+    font-size: 13.5px;
+    margin: 5px 0px;
+    padding: 0px 0px 0px 9px;
+    display: flex;
+    flex-direction: column;
+    max-height: 140px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.mrsConv span {
+    margin: 2px 0px;
+}
+
+.mrsActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hide {
+    display: none !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .bottom {
+        flex-direction: column;
+    }
+    .saved, .msg {
+        height: 300px;
+    }
+    .savedParent {
+        width: calc(100% - 10px);
+        padding: 0px;
+    }
+    .msgParent {
+        width: calc(100% - 10px);
+        padding: 0px;
+    }
+    .saved {
+        margin: 0px 0px 30px;
+    }
+    .panelMain {
+        height: unset;
+    }
+    .applications {
+        max-height: 500px;
+    }
+    .jobHeader {
+        font-size: 14.5px;
+    }
+    .jobSub {
+        font-size: 12.5px;
+    }
+    .jobPending, .jobRejected, .jobAccepted {
+        font-size: 14px;
+    }
+    .preview {
+        font-size: 12.5px;
+    }
+    .jobUnseen, .job {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

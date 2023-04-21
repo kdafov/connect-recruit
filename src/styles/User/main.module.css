@@ -1,0 +1,286 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    height: calc(100vh - 120px);
+}
+
+.mainLabel {
+    font-size: 28px;
+    padding: 10px 0px 25px;
+}
+
+.searchFilter {
+    background: #66B2FF;
+    color: #ffffff;
+    border-radius: 20px;
+    margin: 0px 5px 7px;
+}
+
+.searchFilter svg {
+    color: red;
+}
+
+.searchFilter:hover {
+    background: #C2E0FF;
+    color: #000000;
+}
+
+.searchFilter span {
+    text-transform: math-auto;
+}
+
+.searchBarParent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.searchBar {
+    width: 100%;
+    margin: 0px 10px 0px 0px;
+}
+
+.searchBar > div > div {
+    padding-right: 6px !important;
+}
+
+.filterParentBox {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.filterOptions {
+    display: flex;
+    flex-direction: row;
+}
+
+.filterOptionsLeft, .filterOptionsRight {
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filterOptionsLeft {
+    padding: 0px 15px 0px 0px;
+}
+
+.filterOptionsRight {
+    padding: 0px 0px 0px 15px;
+}
+
+.filterGroupButtons {
+    border: 1px solid rgba(25, 118, 210, 0.5);
+}
+
+.filterGroupButtons button {
+    width: calc(100% / 3);
+}
+
+.filterGroupButtons .selectedButton {
+    background: #66B2FF;
+    color: #ffffff;
+}
+
+.filterActions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 25px 0px 0px;
+}
+
+.filterActions button {
+    margin: 0px 10px;
+    font-weight: bold;
+}
+
+/* Job advert */
+.jobAdvert {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #F0F0F0;
+    padding: 10px 15px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin: 15px 0px;
+    transition: margin 0.5s;
+}
+
+.jobAdvert:hover {
+    margin: 15px 5px;
+    cursor: pointer;
+}
+
+.jobAdvertInfo {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.jobAdvertInfo > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.jobTitle {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.jobRole {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.jobDate {
+    font-size: 13.5px;
+}
+
+.jobAdvertRight > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.jobAdvertRight > div > div {
+    display: flex;
+    align-items: center;
+    margin: 3px 0px;
+}
+
+.jobAdvert > div img {
+    margin: 0px 7px 0px 0px;
+}
+
+.jobAdvertActions {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    width: 20%;
+    margin-right: 10px;
+}
+
+.jobAdvertActions button {
+    position: absolute;
+}
+
+.jobSaveButton {
+    top: 20px;
+    right: -15px;
+}
+
+.companyLogo {
+    border-radius: 12px;
+    border: 1px solid grey;
+}
+
+.jobAdvertLeft {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+}
+
+.jobAdvertLeft > div {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 876px) {
+    .parent {
+        height: calc(100vh - 105px);
+    }
+}
+
+@media only screen and (max-width: 687px) {
+    .jobAdvert {
+        flex-direction: column;
+    }
+    .jobAdvertActions button {
+        position: unset;
+    }
+    .jobAdvertActions {
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+    .jobAdvertInfo {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .filterOptions {
+        flex-direction: column-reverse;
+    }
+    .filterOptionsRight {
+        padding: 0;
+    }
+    .filterActions {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .jobAdvertInfo {
+        flex-direction: column;
+    }
+    .jobAdvertInfo > div {
+        margin: 5px 0px;
+    }
+    .jobAdvertRight > div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .reversible {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .reversible img {
+        padding-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .filterField {
+        width: 300px;
+    }
+    .filterGroupButtons {
+        width: 300px;
+    }
+    .companyLogo {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .filterField {
+        width: 250px;
+    }
+    .filterGroupButtons {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .filterField {
+        width: 220px;
+    }
+    .filterGroupButtons {
+        width: 220px;
+    }
+    .jobAdvertRight > div {
+        flex-direction: column;
+    }
+    .reversible {
+        display: flex;
+        flex-direction: row;
+    }
+    .reversible img {
+        padding-left: 0px;
+    }
+}

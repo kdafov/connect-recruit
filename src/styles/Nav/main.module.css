@@ -1,0 +1,88 @@
+.nav {
+    background-color: #66B2FF;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sectionLeft img {
+    padding: 0px 1rem !important;
+}
+
+.sectionRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.demoLink {
+    padding: 0px 2rem;
+    text-decoration: none;
+    color: #182737;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.login {
+    padding: 0px 2rem;
+    text-decoration: none;
+    color: #182737;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.demoLink, .login {
+    transition: font-size 0.4s linear, color 0.4s linear;
+}
+
+.demoLink:hover, .login:hover {
+    font-size: 18.5px;
+    color: #183637;
+}
+
+.logoMobile {
+    display: none;
+}
+
+@media only screen and (max-width: 876px) {
+    .nav {
+        height: 85px;
+    }
+    .demoLink, .login {
+        padding: 0px 1rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .logoDefault {
+        display: none;
+    }
+    .logoMobile {
+        display: block;
+    }
+    .sectionRight {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 427px) {
+    .demoLink, .login {
+        font-size: 15px;
+    }
+    .demoLink:hover, .login:hover {
+        font-size: 15.5px;
+    }
+    .logoMobile {
+        height: 55px;
+        width: auto;
+    }
+    .sectionLeft img {
+        padding: 0px 0.5rem !important;
+    }
+    .demoLink, .login {
+        padding: 0px 0.5rem;
+    }
+}

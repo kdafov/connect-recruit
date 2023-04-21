@@ -1,0 +1,118 @@
+.parent {
+    margin: 2rem 0 2rem -2rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.block {
+    background: #F0F0F0;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    width: 90%;
+    max-width: 1200px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.soloFeature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px;
+    min-width: 120px;
+}
+
+.featureText, .featureTextEnd {
+    padding: 10px 0px 0px 0px;
+    font-weight: 600;
+}
+
+.featureTextEnd {
+    padding: 0 !important;
+}
+
+.separator {
+    width: 3px;
+    background: #000000;
+    height: 80%;
+}
+
+.featureIcons {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    width: inherit;
+    justify-content: space-around;
+    overflow-x: scroll;
+}
+
+.activeFeature span {
+    color: #66B2FF;
+    font-weight: 700;
+}
+
+.descriptorParent {
+    width: 100%;
+}
+
+.descriptorParent div {
+    padding: 20px 15px;
+}
+
+.descriptionDefault {
+    display: none;
+}
+
+.descriptionSpan {
+    font-size: 15px;
+}
+
+.mobileDescriptionSpan {
+    display: none;
+    font-size: 14.5px;
+}
+
+@media only screen and (max-width: 898px) {
+    .parent {
+        margin-left: -1rem !important;
+    }
+}
+
+@media only screen and (max-width: 847px) {
+    .featureIcons {
+        justify-content: normal;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .parent {
+        margin-left: -2rem !important;
+    }
+}
+
+@media only screen and (max-width: 578px) {
+    .soloFeature img {
+        height: 60px;
+        width: auto;
+    }
+    .soloFeature span {
+        font-size: 15px;
+    }
+    .descriptionSpan {
+        display: none !important;;
+    }
+    .mobileDescriptionSpan {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 478px) {
+    .parent {
+        margin-left: -1.5rem !important;
+    }
+}

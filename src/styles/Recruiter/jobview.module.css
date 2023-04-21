@@ -1,0 +1,442 @@
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub {
+    background: #ffffff;
+    width: 600px;
+    height: 450px;
+}
+
+.title {
+    height: 30px;
+    font-size: 18px;
+    background: #66b2ff;
+    color: #ffffff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+}
+
+.content {
+    height: calc(100% - 30px);
+    padding: 15px 10px;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.jobTitle {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px 0px 3px;
+}
+
+.subTitle {
+    font-size: 13.5px;
+    font-weight: 500;
+    margin: 0px 0px 1px;
+}
+
+.jobListingStats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.jobListingStatDigit {
+    font-size: 18px;
+    margin: 0px 0px 0px 7px;
+}
+
+.listBox {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 175px);
+    margin: 35px 0px 15px;
+    justify-content: space-between;
+}
+
+.applications {
+    width: 60%;
+}
+
+.applicationsTopNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 7px;
+}
+
+.applicationsTopNav button {
+    margin: 0px 5px;
+}
+
+.msg {
+    width: 35%;
+}
+
+.applications > span, .msg > span {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.applications > div, .msg > div {
+    border: 1px solid #000000;
+    padding: 5px 7px;
+    height: calc(100% - 45px);
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.applications > div::-webkit-scrollbar, .msg > div::-webkit-scrollbar, .applicationViewSub::-webkit-scrollbar {
+    display: none;
+}
+
+.buttonsParent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.candidateBlock, .candidateBlockNotification {
+    background: #f0f0f0;
+    padding: 7px 5px 7px 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: padding 0.4s;
+}
+
+.candidateBlock:hover, .candidateBlockNotification:hover {
+    padding: 7px 5px 7px 19px;
+}
+
+.candidateBlockNotification {
+    background: linear-gradient(to right, #FFA500 0, #FFA500 9px, #f0f0f0 9px);
+}
+
+.candidateBlock span, .candidateBlockNotification span {
+    font-size: 15.5px;
+    font-weight: 500;
+}
+
+.messageBlock, .messageBlockNotification {
+    font-size: 13.5px;
+    background: #f0f0f0;
+    padding: 7px 5px 7px 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: 5px 0px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: padding 0.4s;
+}
+
+.messageBlock:hover, .messageBlockNotification:hover {
+    padding: 7px 5px 7px 19px;
+}
+
+.messageBlockNotification {
+    background: linear-gradient(to right, #FFA500 0, #FFA500 9px, #f0f0f0 9px);
+}
+
+.messageReply, .applicationView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.messageReplySub {
+    width: 270px;
+    height: 400px;
+    background: #ffffff;
+    border: 2px solid #66b2ff;
+    border-radius: 7px;
+    padding: 20px 10px;
+}
+
+.mrsText {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.mrsReplybox {
+    font-family: "Montserrat", sans-serif !important;
+    resize: none;
+    width: calc(100% - 15px);
+    height: 140px;
+    margin: 15px 0px;
+    outline: none;
+    padding: 5px;
+}
+
+.mrsConv {
+    font-size: 13.5px;
+    margin: 5px 0px;
+    padding: 0px 0px 0px 9px;
+    display: flex;
+    flex-direction: column;
+    max-height: 140px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.mrsConv span {
+    margin: 2px 0px;
+}
+
+.mrsActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hide {
+    display: none !important;
+}
+
+.applicationViewSub {
+    width: 600px;
+    min-height: 50vh;
+    max-height: calc(90vh);
+    background: #ffffff;
+    border: 2px solid #66b2ff;
+    border-radius: 7px;
+    padding: 20px 10px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.applicationHeader {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.applicationBold {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0px 10px 3px 0px;
+}
+
+.applicationBoldSub {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0px 10px 0px 15px;
+}
+
+.applicationSmallTxt {
+    font-size: 15px;
+}
+
+.applicationRow, .applicationCol {
+    margin: 15px 0px;
+}
+
+.applicationCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.indented {
+    margin: 0px 5px 0px 0px;
+}
+
+.applicationWorkExpInfo {
+    font-size: 15px;
+    margin: 7px 0px 0px 15px;
+}
+
+.screeningParent {
+    border-width: 2px 0px;
+    border-color: #000000;
+    border-style: solid;
+    padding: 30px 0px;
+}
+
+.videoContainer {
+    border: 1px solid;
+    border-radius: 3px;
+    height: 180px;
+    width: 360px;
+    margin: 0px 0px 15px;
+}
+
+.actionBtnsApplicationView {
+    margin: 35px 0px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 650px) {
+    .sub {
+        width: auto;
+    }
+    .listBox {
+        flex-direction: column;
+        margin: 20px 0px 15px;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        scrollbar-width: none;
+    }
+    .listBox::-webkit-scrollbar {
+        display: none;
+    }
+    .applications {
+        width: 90%;
+    }
+    .msg {
+        width: 90%;
+    }
+    .applications > div, .msg > div {
+        height: fit-content;
+        max-height: 350px;
+        margin: 10px 0px;
+    }
+    .main {
+        background: rgba(0, 0, 0, 0.75);
+    }
+    .applicationViewSub {
+        width: 90vw;
+    }
+    .applicationsTopNav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .applicationsTopNav button {
+        margin: 5px 3px 0px;
+    }
+    .applicationRow {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0px 30px;
+    }
+    .applicationBold {
+        margin: 10px 10px 3px 0px;
+    }
+    .screeningParent {
+        margin: 40px 0px 0px;
+        padding: 10px 0px 30px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .sub {
+        height: calc(100vh - 100px);
+    }
+    .top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .topStats {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin: 10px 0px 0px;
+    }
+    .listBox {
+        height: calc(100% - 265px);
+        justify-content: flex-start;
+    }
+    .applications > div, .msg > div {
+        width: 90%;
+    }
+    .buttonsParent {
+        flex-direction: column;
+        align-items: center;
+    }
+    .buttonsParent button {
+        margin: 3px 0px;
+        width: 240px;
+    }
+    .actionBtnsApplicationView {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .actionBtnsApplicationView button {
+        margin: 15px 0px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .videoContainer {
+        width: 360px;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .videoContainer {
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .videoContainer {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .videoContainer {
+        width: 270px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .videoContainer {
+        width: 240px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .videoContainer {
+        width: 210px;
+    }
+}

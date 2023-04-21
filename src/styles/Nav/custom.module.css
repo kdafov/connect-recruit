@@ -1,0 +1,79 @@
+.customNavParent {
+    display: flex;
+    align-items: center;
+}
+
+.avatarParent {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin: 0px 15px;
+}
+
+.avatarParent img, .avatarParent div {
+    position: absolute;
+}
+
+.notificationIcon {
+    height: 18px;
+    width: 18px;
+    border: 1px solid;
+    background: #FFA500;
+    border-radius: 10px;
+    left: 30px;
+    top: -5px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px 20px 0px 0px;
+}
+
+.dropdownParent ul {
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background: #66B2FF;
+    width: 170px;
+    padding: 0;
+}
+
+.logout, .dropdownOption {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.dropdownOption {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: margin-left 0.5s;
+}
+.dropdownOption:hover {
+    margin-left: 5px;
+}
+
+.dropdownOptionLabel {
+    font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dropdownIndicator {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.notificationBlock {
+    height: 100%;
+    width: 3px;
+    background: #FFA500;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    .avatarParent {
+        display: none !important;
+    }
+}

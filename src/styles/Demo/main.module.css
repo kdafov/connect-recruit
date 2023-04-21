@@ -1,0 +1,56 @@
+.main {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+    height: 100vh;
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.company, .recruiter, .user, .dev {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.company span, .recruiter span, .user span, .dev span {
+    font-size: 22.5px;
+    font-weight: 500;
+    padding: 20px 10px;
+    font-style: italic;
+    background: #FFA500;
+    letter-spacing: 0.5px;
+    border-width: 3px 0px;
+    border-color: black;
+    border-style: double;
+    margin: 10px 0px;
+}
+
+.company h1, .recruiter h1, .user h1, .dev h1 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0;
+    padding: 80px 10px;
+    background: #66B2FF;
+    border-width: 5px 0px;
+    border-color: black;
+    border-style: solid;
+}
+
+.img {
+    padding: 20px 10px;
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 478px) {
+    .company h1, .recruiter h1, .user h1, .dev h1 {
+        font-size: 20px;
+    }
+    .company span, .recruiter span, .user span, .dev span {
+        font-size: 18.5px;
+    }
+}

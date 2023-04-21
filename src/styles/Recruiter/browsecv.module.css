@@ -1,0 +1,179 @@
+.main {
+    margin: 20px 30px 0px 0px;
+    height: 100%;
+}
+
+.searchbox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1300px;
+}
+
+.searchfield {
+    width: calc(100% - 80px);
+}
+
+.menu ul {
+    background: #F0F0F0;
+}
+
+.filterParent {
+    margin: 10px 15px;
+}
+
+.filterTitle {
+    font-size: 17.5px;
+    font-weight: 500;
+    margin: 0px 0px 10px 0px;
+}
+
+.minmaxParent, .minmaxSub {
+    display: flex;
+    flex-direction: row;
+}
+
+.minmaxParent {
+    margin: 15px 0px 35px 0px;
+}
+
+.minmaxSub {
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14.5px;
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px 5px 0px;
+}
+
+.cvBlock {
+    background: #f0f0f0;
+    margin: 15px 0px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: padding 0.4s;
+}
+
+.cvBlock:hover {
+    padding: 5px 10px 5px 15px;
+}
+
+.cvBlockTitle {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.cvBlockSubText {
+    font-size: 13.5px;
+}
+
+.cvSeparator {
+    height: 2px;
+    background: grey;
+    margin: 10px 0px;
+}
+
+.cvHide {
+    display: none !important;
+}
+
+.cvInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.cvInfo span {
+    font-size: 15px;
+    margin: 3px 0px;
+}
+
+.cvBut {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 7px;
+}
+
+.msgPopup {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.messageDialog {
+    width: 350px;
+    height: 200px;
+    background: #ffffff;
+    border: 2px solid #F0F0F0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+    z-index: 3;
+}
+
+.msgTitle {
+    font-size: 19px;
+    font-weight: 500;
+    padding-bottom: 7px;
+}
+
+.msgTextArea {
+    width: calc(100% - 10px);
+    height: calc(100% - 80px);
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 3px;
+    resize: none;
+    margin: 0px 0px 7px;
+}
+
+.msgButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.infocvbase {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    margin: 10px 0px 35px;
+}
+
+.infocvbase span {
+    margin: 2px 0px;
+}
+
+@media only screen and (max-width: 346px) {
+    .minmaxParent {
+        flex-direction: column;
+    }
+    .minmaxSub {
+        margin: 10px 5px 5px;
+    }
+}

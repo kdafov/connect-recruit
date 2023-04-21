@@ -1,0 +1,420 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    background: #F0F0F0;
+    padding: 25px 20px;
+    /* height: calc(100vh - 150px); */
+    height: auto;
+    max-height: calc(100vh - 150px);
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 500;
+    padding: 0px 0px 5px;
+}
+
+.subtitle {
+    font-size: 15px;
+}
+
+.panelMain {
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+    border: 2px solid #C0C0C0;
+    border-radius: 5px;
+    margin: 30px 0px;
+    max-width: 1050px;
+    height: 100%;
+}
+
+.menuOptionParent, .selectedOption {
+    display: flex;
+    align-items: center;
+    margin: 20px 15px;
+}
+
+.menuOptionParent img, .selectedOption img {
+    height: 26px;
+    width: auto;
+}
+
+.menuOptionParent span, .selectedOption span {
+    font-weight: 500;
+    padding: 0px 20px 0px 7px;
+    transition: font-size 0.5s;
+    cursor: pointer;
+}
+
+.menuOptionParent span {
+    font-size: 17px;
+}
+
+.selectedOption span {
+    color: #66b2ff;
+    font-size: 18px;
+}
+
+.menuOptionParent:hover,
+.menuOptionParent:hover span {
+  color: #66b2ff;
+  font-size: 18px;
+}
+
+.leftPanel {
+    border-right: 2px solid #C0C0C0;
+    width: 250px;
+}
+
+.rightPanel {
+    width: calc(100% - 280px);
+    padding: 20px;
+    height: 630px;
+}
+
+.menuSection {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menuLabel {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.menuDescription {
+    font-size: 13.5px;
+    margin: 3px 0px;
+}
+
+.hiddenMenu {
+    display: none !important;
+}
+
+/* *********************** */
+/* Company details section */
+/* *********************** */
+
+.sectionCompanyDetails, .sectionPassword, .sectionPreferences, .sectionRecruiters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0px;
+    height: 100%;
+}
+
+.sectionCompanyDetails, .sectionPassword, .sectionPreferences {
+    justify-content: space-between;
+}
+
+.sectionCompanyDetailsTop, .sectionPasswordTop, .sectionPreferencesTop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logoUploadContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logoUploadContainer > span {
+    margin: 0px 0px 10px;
+    font-size: 15px;
+}
+
+.sectionCompanyDetailsSubmit, .sectionPasswordSubmit, .sectionPreferencesSubmit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 0px;
+}
+
+.newAccountPopup {
+    background: #FFA500;
+    display: flex;
+    align-items: center;
+    font-size: 14.5px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 3px 10px;
+    margin: 20px 0px 0px;
+}
+
+.logoImageHodler {
+    display: flex;
+    flex-direction: row;
+}
+
+.logoImage {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin: 0px 0px 0px 10px;
+}
+
+/* ************************* */
+/* Company preferences section */
+/* *********************** */
+
+.sectionPreferences {
+    margin: 30px 0px 10px;
+}
+
+
+/* ************************* */
+/* Company recruiters section */
+/* *********************** */
+
+.topSectionRecruiters {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin: 10px 0px 0px;
+}
+
+.topSectionRecruiters > span {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.recruitersListParent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 120px);
+    margin: 15px 0px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.recruitersListParent::-webkit-scrollbar {
+    display: none;
+}
+
+.recruitersListItem {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 25px);
+    margin: 7px 0px;
+    padding: 10px 15px 10px 10px;
+    border-width: 1px 0px;
+    border-color: #1976D2;
+    border-style: dotted;
+    align-items: center;
+}
+
+.recruitersListTitle {
+    font-style: italic;
+    font-size: 15.5px;
+    font-weight: 600;
+}
+
+.recruitersListRole {
+    font-size: 14.5px;
+}
+
+.recruiterAddPopupParentDefault, .recruiterAddPopupShow {
+    background: rgba(0, 0, 0, 0.35);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.recruiterAddPopup {
+    background: #F0F0F0;
+    width: 340px;
+    height: fit-content;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recruiterAddPopupShow {
+    display: flex !important;
+}
+
+.recruiterAddMenuCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.recruiterAddMenuForm, .recruiterAddMenuFormHidden {
+    display: flex;
+    flex-direction: column;
+}
+
+.recruiterAddMenuForm > span {
+    margin: 25px 0px 0px;
+    font-weight: 500;
+    font-size: 1
+}
+
+.recruiterAddMenuFormHidden {
+    display: none !important;
+}
+
+.stylesDelete {
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.stylesDelete button {
+    margin: ;
+}
+
+@media only screen and (max-width: 876px) {
+    .main {
+        max-height: calc(100vh - 135px);
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .companyDescriptionField {
+        width: 300px;
+    }
+    .topSectionRecruiters > span {
+        width: 270px;
+    }
+    .recruitersListTitle {
+        font-size: 14.5px;
+        font-weight: 500;
+    }
+    .recruitersNameBox {
+        display: flex;
+        flex-direction: column;
+    }
+    .recruitersListDash {
+        display: none;
+    }
+    .recruitersListRole {
+        font-size: 13.5px;
+    }
+    .recruitersListParent {
+        height: calc(100% - 150px);
+    }
+}
+
+@media only screen and (max-width: 625px) {
+    .menuOptionParent > span, .selectedOption > span {
+        display: none;
+    }
+    .leftPanel {
+        width: fit-content;
+    }
+    .menuOptionParent, .selectedOption {
+        margin: 35px 22px;
+        justify-content: center;
+    }
+    .menuOptionParent img, .selectedOption img {
+        height: 30px;
+    }
+    .rightPanel {
+        width: calc(100% - 80px);
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .topSectionRecruiters {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+    .topSectionRecruiters > span {
+        margin: 20px 0px 0px;
+    }
+    .recruitersListParent {
+        height: calc(100% - 190px);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .recruitersListParent { 
+        width: calc(100% - 30px);
+        height: calc(100% - 225px);
+    }
+    .topSectionRecruiters > span {
+        width: auto;
+    }
+    .recruitersListItem {
+        flex-direction: column;
+    }
+    .recruitersActionBox {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 13px 0px -3px;
+    }
+    .panelMain {
+        height: fit-content;
+    }
+    .passwordField, .textField, .companyDescriptionField {
+        width: 205px;
+    }
+    .logoUploadContainer > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logoUploadContainer > div > label {
+        margin: 5px 0px !important;
+    }
+    .sectionCompanyDetailsSubmit {
+        margin: 10px 0px 0px;
+    }
+    .recruiterAddPopup {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .recruitersListParent {
+        height: calc(100% - 250px);
+    }
+    .menuOptionParent, .selectedOption {
+        margin: 35px 15px;
+    }
+    .menuOptionParent img, .selectedOption img {
+        height: 22px;
+    }
+    .rightPanel {
+        width: calc(100% - 80px);
+    }
+    .passwordField, .textField, .companyDescriptionField {
+        width: auto;
+    }
+    .logoImage {
+        height: 50px;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    .recruiterAddPopup {
+        padding: 10px;
+    }
+}

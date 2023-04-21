@@ -1,0 +1,140 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 30px 20px 0px;
+    max-width: 1300px;
+}
+
+.topSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 18.5px;
+    font-weight: 500;
+}
+
+.actionButtonsParent {
+    display: flex;
+    flex-direction: row;
+}
+
+.filterMenu {
+    margin-top: 2px;
+}
+
+.filterMenu > div > ul {
+    padding: 0;
+    width: 145px;
+}
+
+.jobListingMain, .jobListingMainNotify {
+    display: flex;
+    width: calc(100% - 50px);
+    flex-direction: row;
+    justify-content: space-between;
+    background: #F0F0F0;
+    border-radius: 10px;
+    padding: 10px 25px;
+    margin: 20px 0px;
+    transition: padding 0.3s, width 0.3;
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+
+.jobListingMainNotify {
+    background-color: #ffa500;
+    background-image: linear-gradient(to right, #ffa500 10px, #F0F0F0 10px);
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+.jobListingMain:hover, .jobListingMainNotify:hover {
+    padding: 10px 25px 10px 30px;
+    width: calc(100% - 55px);
+}
+
+.jobListingLeft, .jobListingLeftTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.jobListingTitle {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.jobListingPosted {
+    font-size: 13.5px;
+    font-style: italic;
+}
+
+.jobListingDue {
+    font-size: 14px;
+    font-weight: 500;
+    color: darkred;
+}
+
+.jobListingRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.jobListingStats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.jobListingStatDigit {
+    font-size: 18px;
+    margin: 0px 0px 0px 7px;
+}
+
+.actionButtonNewMobile {
+    display: none;
+}
+
+@media only screen and (max-width: 655px) {
+    .topSection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .title {
+        padding: 0px 0px 15px;
+    }
+    .actionButtonsParent {
+        padding: 0px 0px 15px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .actionButtonsParent button {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .jobListingMain, .jobListingMainNotify {
+        flex-direction: column;
+    }
+    .jobListingRight {
+        flex-direction: row;
+        margin: 15px 0px 0px;
+    }
+    .jobListingTitle {
+        font-size: 20px;
+    }
+    .actionButtonNewDefault {
+        display: none !important;
+    }
+    .actionButtonNewMobile {
+        display: flex;
+    }
+}

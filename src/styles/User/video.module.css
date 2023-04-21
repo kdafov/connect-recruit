@@ -1,0 +1,100 @@
+.videoScreening {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 35px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0px 0px 10px;
+}
+
+.videoContainer video {
+    border: 1px solid;
+    border-radius: 3px;
+    height: 180px;
+    width: 360px;
+    margin: 0px 0px 15px;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 360px;
+}
+
+.infolabel {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infoSub {
+    font-size: 15px;
+}
+
+.infoSubWarning {
+    color: red;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 360px;
+}
+
+@media only screen and (max-width: 440px) {
+    .overlay {
+        width: auto;
+        flex-direction: column;
+    }
+    .buttonsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .buttonsContainer button {
+        margin: 5px 0px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .videoContainer video {
+        width: 360px;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .videoContainer video {
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .videoContainer video {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .videoContainer video {
+        width: 270px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .videoContainer video {
+        width: 240px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .videoContainer video {
+        width: 210px;
+    }
+}

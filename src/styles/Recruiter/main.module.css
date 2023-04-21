@@ -1,0 +1,48 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    width: 100%;
+    height: calc(100vh - 140px);
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    font-size: 27px;
+    font-weight: 500;
+    margin: 5px 0px 25px;
+}
+
+.sectionsToggleParent {
+    width: calc(100% - 30px);
+    max-width: 1300px;
+}
+
+.sectionsToggleButton {
+    width: calc(100% / 3);
+}
+
+@media only screen and (max-width: 876px) {
+    .main {
+        height: calc(100vh - 125px);
+    }
+}
+
+@media only screen and (max-width: 655px) {
+    .sectionsToggleButton {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .sectionsToggleButton {
+        font-size: 11px;
+    }
+}

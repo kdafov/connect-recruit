@@ -1,0 +1,447 @@
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub {
+    background: #ffffff;
+    width: 600px;
+    height: 350px;
+}
+
+.header {
+    background: #66b2ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+
+.header span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+}
+
+.headerLeft label {
+    margin: 0px 15px 0px 5px;
+}
+
+.contentHidden {
+    display: none;
+}
+
+.contentP1, .contentP2, .contentP3 {
+    height: calc(100% - 50px);
+    width: 100%;
+}
+
+.contentP1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.contentLeftP1, .contentRightP1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.expInput {
+    border: 1px solid darkgray;
+    height: 25px;
+    border-radius: 10px;
+    padding: 2px 7px;
+}
+
+/* P2 */
+.indication {
+    background: #F0F0F0;
+    margin: 7px 10px;
+    border-radius: 7px;
+    padding: 3px 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.indication span {
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.indicationOn {
+    color: #FFA500;
+    font-weight: 600;
+}
+
+.p2Content {
+    display: flex;
+    flex-direction: column;
+}
+
+.writingBox {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 20px;
+}
+
+.writingBoxTitle {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.writingBox textarea {
+    padding: 3px;
+    width: 300px;
+    height: 200px;
+    resize: none;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.writingBoxGreyText {
+    color: #B2BAC2;
+    margin: 0px 0px 0px 20px;
+    max-width: 200px;
+    font-weight: 500;
+    font-size: 15.5px;
+    font-style: italic;
+}
+
+/* P3 */
+.contentP3 {
+    margin: 20px 10px;
+    width: calc(100% - 20px);
+}
+
+.tickBoxParent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.tickBoxParent > span {
+    font-size: 14px;
+    color: #B2BAC2;
+    font-weight: 500;
+}
+
+/* P4 */
+.contentP4 {
+    margin: 10px 10px;
+    width: calc(100% - 20px);
+}
+
+.P4Sub {
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    margin-top: 7px;
+    justify-content: space-between;
+}
+
+.P4reqList {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+    width: 300px;
+}
+
+.P4reqList::-webkit-scrollbar {
+    display: none;
+}
+
+.aqBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #F0F0F0;
+    border-radius: 7px;
+    border: 1px solid #000000;
+    margin: 10px 0px;
+    padding: 3px 7px;
+    justify-content: space-between;
+}
+
+.aqBlockSub {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40px);
+}
+
+.aqTitle {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.aqSubTitle {
+    font-size: 14.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aqInfoTitle {
+    font-size: 11.5px;
+    font-style: italic;
+}
+
+.P4Options {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.P4Options button {
+    margin: 10px 0px;
+
+}
+
+/* P4 Popup */
+.innerPopup {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: #F0F0F0;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    padding: 10px 20px;
+}
+
+.innerPopupHidden {
+    display: none;
+}
+
+.innerPopupTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.innerPopupTitle {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.innerPopup textarea {
+    width: 230px;
+    height: 120px;
+    resize: none;
+    border-radius: 3px;
+    font-family: "Montserrat", sans-serif;
+    padding: 3px 5px;
+}
+
+.innerPopupBottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* CNF popup */
+.cnfPopup {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cnfPopup > div {
+    width: 200px;
+    height: auto;
+    background: #ffffff;
+    padding: 0px 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cnfPopupTitle {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 19px;
+    font-weight: 600;
+    background: #66B2FF;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px 0px 5px;
+}
+
+.cnfPopupSubText {
+    font-size: 14px;
+    margin: 10px 0px;
+}
+
+.cnfPopupActions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px 15px;
+}
+
+.successTickParent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100% - 50px);
+}
+
+.successTickParent img {
+    width: 160px;
+    height: auto;
+}
+
+.spacedTitle {
+    margin-left: 20px;
+}
+
+.smallNav {
+    display: none;
+}
+
+.smallIcon {
+    display: none;
+}
+
+@media only screen and (max-width: 630px) {
+    /* P1 */
+    .sub {
+        width: 300px;
+        height: calc(100vh - 50px);
+    }
+    .header {
+        flex-direction: column;
+        height: 90px;
+        justify-content: space-evenly;
+    }
+    .header span {
+        font-size: 14px;
+    }
+    .headerLeft {
+        margin: 5px;
+        width: 100%;
+    }
+
+    .contentP1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        scrollbar-width: none;
+    }
+    .contentP1, .contentP2, .contentP3 {
+        height: calc(100% - 100px);
+    }
+    .contentP1::-webkit-scrollbar {
+        display: none;
+    }
+    .contentRightP1 {
+        flex-direction: column-reverse;
+    }
+
+    /* P2 */
+    .contentP2 {
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        scrollbar-width: none;
+    }
+    .contentP2::-webkit-scrollbar {
+        display: none;
+    }
+    .hideNav {
+        display: none !important;
+    }
+    .smallNav {
+        display: block;
+        margin: 2px 7px 3px 0px;
+        transition: color 0.5s;
+        cursor: pointer;
+    }
+    .indication {
+        flex-direction: column;
+        font-size: 12px;
+    }
+    .indication span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .writingBox {
+        flex-direction: column;
+    }
+    .writingBox textarea {
+        width: auto;
+        margin: 0px 0px 15px;
+    }
+    .writingBoxGreyText {
+        max-width: initial;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    /* P3 */
+    .contentP3 {
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        scrollbar-width: none;
+        height: calc(100% - 140px);
+    }
+    .contentP3::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* P4 */
+    .smallIcon {
+        display: block;
+    }
+    .P4Sub {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .P4Options {
+        width: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .P4reqList {
+        width: auto;
+        height: calc(100vh - 275px);
+    }
+
+    /* success */
+    .successTickParent {
+        height: calc(100% - 90px);
+    }
+}

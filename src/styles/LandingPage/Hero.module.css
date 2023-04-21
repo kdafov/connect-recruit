@@ -1,0 +1,135 @@
+.parent {
+  width: 100vw;
+  position: absolute;
+}
+
+.frame {
+  padding: 1.5rem 0;
+  width: inherit;
+  display: flex;
+  position: relative;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  left: 2rem;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+}
+
+.labels span {
+  font-size: min(calc(1.475rem + 2.7vw),64px);
+  font-weight: 400;
+  line-height: 1.22;
+}
+
+.mainLabel {
+  font-weight: 600 !important;
+  color: #66B2FF;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.frame > div, .frame > img {
+  position: absolute;
+}
+
+.frame > img {
+  right: 2rem;
+  padding: 15px 0px;
+}
+
+.buttonFrame {
+  margin: 40px 0px;
+}
+
+.buttonFrame a button {
+  background: #66b2ff;
+  color: #000000;
+  border: none;
+  border-radius: 15px;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: "Montserrat", sans-serif;
+  padding: 8px 30px;
+  box-shadow: 0.5px 1px 3px #000000;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1276px) {
+  .frame > img {
+    height: 240px !important;
+    width: auto;
+    padding: 20px 0px;
+  }
+}
+
+@media only screen and (max-width: 898px) {
+  .frame > img {
+    height: 200px !important;
+    width: auto;
+    padding: 20px 0px;
+    right: 1rem !important;
+  }
+  .labels span {
+    font-size: min(calc(1.2rem + 2.7vw),64px);
+  }
+  .leftSide {
+    left: 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .frame > img {
+    height: 175px !important;
+    width: 300px !important;
+    padding: 15px 0px;
+    right: 0rem !important;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .frame {
+    padding: 2rem 0;
+  }
+  .frame > img {
+    display: none;
+  }
+  .labels span {
+    font-size: min(calc(1.6rem + 2.7vw),64px);
+  }
+  .leftSide {
+    left: 2rem !important;
+  }
+}
+
+@media only screen and (max-width: 478px) {
+  .labels span {
+    font-size: min(calc(1.4rem + 2.7vw),64px);
+  }
+  .leftSide {
+    left: 1.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 381px) {
+  .labels span {
+    font-size: min(calc(1.2rem + 2.7vw),64px);
+    line-height: 1.35;
+  }
+  .buttonFrame a button {
+    font-size: 22.5px;
+    padding: 7px 22px;
+  }
+}
+
+@media only screen and (max-width: 335px) {
+  .labels span {
+    font-size: min(calc(1.1rem + 2.5vw),64px);
+  }
+}

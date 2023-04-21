@@ -1,0 +1,87 @@
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.sub {
+    background: #ffffff;
+    width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.sub::-webkit-scrollbar {
+    display: none;
+}
+
+.exitParent {
+    height: 30px;
+    background: #182737;
+    width: 386px;
+    border-style: solid;
+    border-width: 2px 2px 0px 2px;
+    border-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.exitButton {
+    width: 26px;
+    height: 22px;
+    background: #f00000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0px 5px 0px 0px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 17.5px;
+}
+
+.actions {
+    margin: 20px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 420px) {
+    .exitParent {
+        width: calc(100vw - 24px);
+    }
+    .sub {
+        width: calc(100vw - 60px);
+        height: auto;
+    }
+    .navigation {
+        font-size: 16.5px;
+    }
+    .actions {
+        flex-direction: column;
+    }
+    .actions button {
+        margin: 10px 0px;
+    }
+}

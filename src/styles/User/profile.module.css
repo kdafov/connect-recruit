@@ -1,0 +1,90 @@
+.cvSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cvSection > span {
+    margin: 30px 0px 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 20px);
+}
+
+
+
+.otherTop, .otherBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.otherBottom {
+    height: 470px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.otherBottom::-webkit-scrollbar {
+    display: none;
+}
+
+.otherTop > span, .otherBottom > span {
+    margin: 30px 0px 10px;
+}
+
+.otherDEV0 {
+    background: #c2e0ff;
+    border-radius: 5px;
+    border: 1px dashed black;
+}
+
+.otherDEV1 {
+    flex-direction: row;
+    justify-content: space-between;
+    background: #ffffff;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #ff6666;
+    font-size: 19px;
+    padding: 0px 10px;
+}
+
+.otherDescText {
+    font-size: 14.5px;
+}
+
+.otherHighlight {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 20px 10px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.otherSection {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.code {
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 575px) {
+    .otherBottom {
+        width: 80%;
+    }
+}

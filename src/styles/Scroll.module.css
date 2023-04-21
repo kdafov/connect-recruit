@@ -1,0 +1,24 @@
+/***
+    Default StyleSheet for options related to scrollbars and their
+    configurations. Including hidding scrollbars, altering style and
+    other options for all popular browsers including IE, Safari, 
+    Chrome, and Firefox.
+*/
+
+.disableScrollX {
+    overflow-x: scroll;
+}
+  
+.disableScrollY {
+    overflow-y: scroll;
+}
+
+.disableScrollX, .disableScrollY {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.disableScrollX::-webkit-scrollbar, .disableScrollY::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
