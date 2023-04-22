@@ -35,6 +35,7 @@ import CVIcon from '@/public/assets/cv_icon.svg';
 import CVIconActive from '@/public/assets/cv_icon_active.svg';
 import MoreSettingsIcon from '@/public/assets/more_settings_icon.svg';
 import MoreSettingsIconActive from '@/public/assets/more_settings_active_icon.svg';
+import Link from "next/link";
 
 const AdminProfile = () => {
     const Alert = forwardRef(function Alert(props, ref) {
@@ -280,7 +281,7 @@ const AdminProfile = () => {
                     {/*** CV SECTION ***/}
                     {Panel('CV', 'Upload or change your CV',
                     <section className={styles.cvSection}>
-                        <span>Current CV: {cvURL === '' ? 'No CV found' : cvURL}</span>
+                        <span>Current CV: {cvURL === null ? 'No CV found' : <span>We found a CV connected to your account. <Link href={cvURL} target='_blank'>View CV</Link></span>}</span>
                         <Button variant="outlined" component='label' size='small'>
                             {uploading ? 'Uploading...' : 'Upload CV'}
                             <input hidden accept=".doc,.docx,.pdf" type='file'
