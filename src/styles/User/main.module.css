@@ -175,6 +175,8 @@
 .companyLogo {
     border-radius: 12px;
     border: 1px solid grey;
+    height: 80px;
+    width: 80px;
 }
 
 .jobAdvertLeft {

@@ -17,6 +17,7 @@ import Image from 'next/image';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import NewAdvertPage from '@/components/Recruiter/NewJob';
+import Link from 'next/link';
 
 const Page = (props) => {
     const Alert = forwardRef(function Alert(props, ref) {
@@ -417,7 +418,7 @@ const Page = (props) => {
                 <div className={styles.applicationViewSub}>
                     <div className={styles.applicationHeader}>
                         <span>Job Application #{showApplication}</span>
-                        <Button variant='contained' size='small' onClick={() => {handleFileDownload(cCVref)}}>CV</Button>
+                        <Button variant='contained' size='small'><Link href={cCVref} target='_blank'>CV</Link></Button>
                     </div>
                     <div className={styles.generalInfo}>
                         <div className={styles.applicationRow}>
@@ -502,7 +503,7 @@ const Page = (props) => {
                                 } else if (v[1] === 'Video') {
                                     return <div key={i} className={styles.applicationCol}>
                                         <span className={styles.applicationBold}>{v[2]}</span>
-                                        <video className={styles.videoContainer} src={'/docs/' + v[3]} controls></video>
+                                        <video className={styles.videoContainer} src={v[3]} controls></video>
                                     </div>
                                 } else if (v[1] === 'Req') {
                                     return <div key={i} className={styles.applicationCol}>

@@ -71,7 +71,7 @@ const Page = (props) => {
     const [jobViews, setJobViews] = useState('1562');
     const [jobApplications, setJobApplications] = useState('23');
     const [fastApply, setFastApply] = useState(false);
-    const [companyLogo, setCompanyLogo] = useState('1680452106233_logo2.jpg');
+    const [companyLogo, setCompanyLogo] = useState('');
     const [companyInfo, setCompanyInfo] = useState('text1');
     const [companyDescription, setCompanyDescription] = useState('text2');
     const [companyReq, setCompanyReq] = useState('text3');
@@ -151,7 +151,7 @@ const Page = (props) => {
                 <div className={styles.topPanel}>
                     <div className={styles.left}>
                         <div className={styles.leftTop}>
-                            <Image src={'/logos/' + companyLogo || LazyLoadImg} alt={'Company logo'} width={50} height={50} className={styles.companyLogo} />
+                            <img src={companyLogo === '' ? LazyLoadImg : companyLogo} alt={'Company logo'} className={styles.companyLogo} />
                             <div className={styles.leftTopInfo}>
                                 <span className={styles.company}>{company}</span>
                                 <span className={styles.title}>{jobTitle}</span>

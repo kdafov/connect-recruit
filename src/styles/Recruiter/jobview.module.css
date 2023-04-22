@@ -255,6 +255,12 @@
     align-items: center;
 }
 
+.applicationHeader a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
 .applicationBold {
     font-size: 17px;
     font-weight: 500;

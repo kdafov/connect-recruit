@@ -23,7 +23,8 @@ const Overview = () => {
     const [m2Rate, setM2Rate] = useState([]);
     const [bar, setBar] = useState([]);
     const [pie, setPie] = useState([]);
-    const [bestPerformanceJob, setBestPerformanceJob] = useState([]);
+    const [bestPerformanceJob, setBestPerformanceJob] = useState([1,3,2,0]);
+    const [notEnoughData, setNotEnoughData] = useState(false);
 
     useEffect(() => {
         axios.post('/api/metrics', {
@@ -31,28 +32,32 @@ const Overview = () => {
             id: localStorage.getItem('id')
         }).then(( {data} ) => {
             if (data.status === 200) {
-                setJobsCount(data.metric1.A);
-                setcompaniesCount(data.metric1.B);
-                setApplicationCount(data.metric1.C);
-                const refinedNames = data.metric2.A.map(item => item.company_name);
-                const refinedRates = data.metric2.A.map(item => Math.round(item.non_pending_applications / item.pending_applications * 100));
-                setM2Names(refinedNames);
-                setM2Rate(refinedRates);
-                const words = data.metric3.A.map(item => item.v.split(', ')).flat();
-                const result = Object.values(data.metric3).flatMap(v => v.map(o => o.v)).join(',').toLowerCase().split(/[^a-zA-Z]+/).filter(Boolean).reduce((acc, word) => {
-                    if (acc.hasOwnProperty(word)) {
-                        acc[word]++;
-                    } else {
-                        acc[word] = 1;
-                    }
-                    return acc;
-                }, {});
-                const top5 = Object.entries(result).sort((a, b) => b[1] - a[1]).slice(0, 5);
-                setBar(top5.map(([x, y]) => ({ x: x.charAt(0).toUpperCase() + x.slice(1), y })))
-                const statuses = Object.values(data.metric5.A).map(item => item.status);
-                const metrics = Object.values(data.metric5.A).map(item => item.metric);
-                setPie([statuses, metrics]);
-                setBestPerformanceJob([data.metric4.applications, data.metric4.views, data.metric4.accepted, data.metric4.messages, data.metric4.company + ' - ' + data.metric4.title]);
+                try {
+                    setJobsCount(data.metric1.A);
+                    setcompaniesCount(data.metric1.B);
+                    setApplicationCount(data.metric1.C);
+                    const refinedNames = data.metric2.A.map(item => item.company_name);
+                    const refinedRates = data.metric2.A.map(item => Math.round(item.non_pending_applications / item.pending_applications * 100));
+                    setM2Names(refinedNames);
+                    setM2Rate(refinedRates);
+                    const words = data.metric3.A.map(item => item.v.split(', ')).flat();
+                    const result = Object.values(data.metric3).flatMap(v => v.map(o => o.v)).join(',').toLowerCase().split(/[^a-zA-Z]+/).filter(Boolean).reduce((acc, word) => {
+                        if (acc.hasOwnProperty(word)) {
+                            acc[word]++;
+                        } else {
+                            acc[word] = 1;
+                        }
+                        return acc;
+                    }, {});
+                    const top5 = Object.entries(result).sort((a, b) => b[1] - a[1]).slice(0, 5);
+                    setBar(top5.map(([x, y]) => ({ x: x.charAt(0).toUpperCase() + x.slice(1), y })))
+                    const statuses = Object.values(data.metric5.A).map(item => item.status);
+                    const metrics = Object.values(data.metric5.A).map(item => item.metric);
+                    setPie([statuses, metrics]);
+                    setBestPerformanceJob([data.metric4.applications, data.metric4.views, data.metric4.accepted, data.metric4.messages, data.metric4.company + ' - ' + data.metric4.title]);
+                } catch (e) {
+                    setNotEnoughData(true);
+                }
             }
         })
     }, [])
@@ -73,6 +78,7 @@ const Overview = () => {
     
     return (
         <section className={s.main}>
+            {notEnoughData ? <h2 className={s.megaTitle}>There is not enough data for statistics.</h2> : <>
             <h2 className={s.megaTitle}>In the platform today:</h2>
             <div className={s.quickStat}>
                 {SmallDataDisplay(jobsCount, Array.from({length: 5}, () => Math.floor(Math.random() * 7) + 1), 'Jobs', 140, 100, 1)}
@@ -107,6 +113,7 @@ const Overview = () => {
                 <PieCircle labels={pie[0]} series={pie[1]} h={280} w={350} />
                 <Bar data={bar} w={350} h={300} title={'Most looked keywords'} palette={1} />
             </div>
+            </>}
         </section>
     );
 };

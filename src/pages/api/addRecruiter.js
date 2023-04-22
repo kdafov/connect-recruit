@@ -12,7 +12,7 @@ export default function handler(req, res) {
     const email = db.escapeChar(req.body.email);
     const access = db.escapeChar(req.body.access) === 'limited' ? 0 : 1;
 
-    const password = Array.from({length: 10}, () => String.fromCharCode(Math.floor(Math.random() * (126 - 33 + 1)) + 33)).join('');
+    const password = Array.from({ length: 10 }, () => "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?".charAt(Math.floor(Math.random() * 38))).join('');
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(password, salt);
     const insertQuery = `INSERT INTO users(name, email, password, access_level) VALUES('${name}', '${email}', '${hashedPassword}', 'COMPANY_ACCESS')`;

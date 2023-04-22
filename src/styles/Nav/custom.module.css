@@ -14,6 +14,11 @@
     position: absolute;
 }
 
+.avatarParent img {
+    height: 45px;
+    width: 45px;
+}
+
 .notificationIcon {
     height: 18px;
     width: 18px;

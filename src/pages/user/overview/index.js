@@ -35,6 +35,11 @@ export default function Profile() {
 
                 //Gather user name from the JWT token
                 localStorage.setItem('id', response.data.payload.userId);
+
+                //Check if account has just been created
+                if (response.data.accountStatus === 1) {
+                    router.push('/user/profile');
+                }
             } else {
                 localStorage.clear();
                 setAccessToken('');
