@@ -4,10 +4,8 @@ echo "Starting setup 2 script..."
 sleep 3
 
 # Installing Node and NPM
-echo "(0/) Installing Node & NPM"
+echo "(1/4) Installing Node & NPM"
 sleep 5
-
-nvm install 16.20.0
 
 node -v
 sleep 5
@@ -15,9 +13,10 @@ npm -v
 sleep 5
 
 # Setting up .env
-echo "(0/) Setting up .env file"
+echo "(2/4) Setting up .env file"
 sleep 5
 
+cd src
 echo "Enter SUPER_PARSER_KEY:"
 read spkey
 
@@ -45,9 +44,28 @@ echo "PROJECT_ID=$projectid" | sudo tee -a .env >/dev/null
 echo "GCP_BUCKET_NAME=connect-bucket-$projectid" | sudo tee -a .env >/dev/null
 
 # Run npm install
+echo "(3/4) Installing Node modules"
+sleep 5
+
+npm i
+npm install pm2 -g
 
 # Create build of app
+echo "(4/4) Creating optimized build for app"
+sleep 5
 
-# Install and setup PM2
+npm run build
 
-# done --- but do not run pm2
+# END
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo "SETUP COMPLETED"
+echo ""
+echo "To start an instance of the app run: pm2 start npm --name \"nextapp\" -- start"
+echo ""
+echo "To stop the instance run: pm2 stop nextapp"
+echo ""
+echo "EOF <<"
