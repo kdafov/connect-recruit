@@ -26,6 +26,7 @@ sleep 3
 sudo apt install mariadb-server -y
 sudo apt-get install expect -y
 
+expect <<EOF
 set timeout -1
 spawn sudo mysql_secure_installation
 
@@ -47,6 +48,7 @@ expect "Reload privilege tables now?"
 send "y\r"
 
 expect eof
+EOF
 
 # Create privileged user and add rights
 echo "(4/6) Creating privileged user and rights"
@@ -68,10 +70,12 @@ rm $CONFIG_FILE
 echo "(5/6) Importing Connect(R) database"
 sleep 3
 
+expect <<EOF
 spawn mysql -u connect -p connect_db < connect_db.sql
 expect "Enter password:"
 send "\r"
 expect eof
+EOF
 
 # Installing node package manager
 echo "(6/6) Installing Node Package Manager"
