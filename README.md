@@ -47,10 +47,10 @@ Link `https://www.apachefriends.org/download.html`
 2. Verify installation by typing ```node -v``` and ```npm -v``` in Command Prompt (Windows) or Terminal (MacOS) - you should see versions being returned
 
 ### SECTION (3) : Project setup and startup
-1a. On your local machine create a new folder and open a terminal at it and run the command: ``` git clone https://github.com/kdafov/connect-recruit.git ```
-OR
-1b. Download the files from the main branch in a newly created folder on your desktop
-2. Open the `src` folder from a terminal and run the following command:
+1a. On your local machine create a new folder and open a terminal at it and run the command: ``` git clone https://github.com/kdafov/connect-recruit.git ``` \
+OR \
+1b. Download the files from the main branch in a newly created folder on your desktop \
+2. Open the `src` folder from a terminal and run the following command: \
 ```
 npm i && npm run build && npm run start
 ```
