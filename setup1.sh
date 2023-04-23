@@ -24,7 +24,7 @@ sudo systemctl restart nginx
 echo "(3/6) Setting up mySQL"
 sleep 3
 sudo apt install mariadb-server -y
-sudo apt-get install expect
+sudo apt-get install expect -y
 
 set timeout -1
 spawn sudo mysql_secure_installation
