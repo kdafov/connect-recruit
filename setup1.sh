@@ -24,6 +24,7 @@ sudo systemctl restart nginx
 echo "(3/6) Setting up mySQL"
 sleep 3
 sudo apt install mariadb-server -y
+sudo apt-get install expect
 
 set timeout -1
 spawn sudo mysql_secure_installation
@@ -67,9 +68,10 @@ rm $CONFIG_FILE
 echo "(5/6) Importing Connect(R) database"
 sleep 3
 
-mysql -u connect -p connect_db < connect_db.sql <<EOF
-$'\n'
-EOF
+spawn mysql -u connect -p connect_db < connect_db.sql
+expect "Enter password:"
+send "\r"
+expect eof
 
 # Installing node package manager
 echo "(6/6) Installing Node Package Manager"
