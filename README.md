@@ -16,6 +16,71 @@
 
 1. Go to the dashboard of GCP
 `https://console.cloud.google.com/`
+2. Create a new project (or use your existing one) \
+***WARNING***: Note down the project ID
+3. In the search bar search for `IAM & ADMIN` and then click on the `Service Accounts` from the panel on the left \
+![image](https://user-images.githubusercontent.com/94061728/233807751-ad516454-6f99-4ae4-bdcf-9487b41393c7.png)
+4. Click on the account `...@developer.gserviceaccount.com`
+5. Click on the `keys` tab
+6. Click on `Add key`
+7. Click on `Create new key`
+8. Select key type `JSON` and click `Create` \
+***WARNING***: Make sure to copy the content of the .json file that was generated
+9. Open CloudShell from the top right
+![image](https://user-images.githubusercontent.com/94061728/233808193-1c8f1ebf-751b-4254-908b-ddd88247fcd0.png)
+10. Authorize and accept all prompts
+11. Switch cloud shell to your project by typing:
+```
+gcloud config set project <YOUR_PROJECT_ID>
+```
+12. Enter the following command to create a VM instance
+```
+gcloud compute instances create connect-project-vm \
+--image-family=ubuntu-1804-lts \
+--image-project=ubuntu-os-cloud \
+--machine-type=e2-small \
+--zone=us-central1-b
+``` 
+You should see the following output: \
+![image](https://user-images.githubusercontent.com/94061728/233811341-68af9092-7549-4df7-8b74-a8ba879b7a3e.png)
+
+13. Enter the following command to create a bucket
+```
+gcloud storage buckets create gs://connect-bucket-<YOUR_PROJECT_ID>
+```
+and allow public access by enterring the following command:
+```
+gcloud storage buckets add-iam-policy-binding gs://connect-bucket-<YOUR_PROJECT_ID> --member=allUsers --role=roles/storage.objectViewer
+```
+
+14. Connect to the VM instance by enterring the following command:
+```
+gcloud compute ssh connect-project-vm --zone=us-central1-b
+```
+
+15. Type the following command to pull the Connect app files:
+```
+mkdir app && cd app && git clone https://github.com/kdafov/connect-recruit.git gcp-update
+```
+
+16. Run the configuration file by enterring the command: \
+***Note:*** You will be asked to enter information as the script executes
+```
+
+```
+
+
+
+## OPTION 1: Hosting on Google Cloud Platform
+
+### Prerequisites
+
+1. Google Cloud Platform account with billing enabled
+
+### Setup
+
+1. Go to the dashboard of GCP
+`https://console.cloud.google.com/`
 2. Create a new project (or use your existing one)
 3. Go to `Compute Engine` > `VM instances`
 4. Click on `Create Instance` and enter the following information:
