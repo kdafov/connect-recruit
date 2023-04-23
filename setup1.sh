@@ -5,24 +5,24 @@ sleep 3
 
 # Update machine
 echo "(0/6) Updating instance"
-sleep 3
+sleep 5
 sudo apt-get update
 
 # Installing Nginx
 echo "(1/6) Installing Nginx"
-sleep 3
+sleep 5
 sudo apt-get install nginx -y
 
 # Setting up Nginx
 echo "(2/6) Setting up Nginx"
-sleep 3
+sleep 5
 sudo rm /etc/nginx/sites-available/default && sudo cp default /etc/nginx/sites-available/
 sudo nginx -t
 sudo systemctl restart nginx
 
 # Setting up mysql
 echo "(3/6) Setting up mySQL"
-sleep 3
+sleep 5
 sudo apt install mariadb-server -y
 sudo apt-get install expect -y
 
@@ -52,7 +52,7 @@ EOF
 
 # Create privileged user and add rights
 echo "(4/6) Creating privileged user and rights"
-sleep 3
+sleep 5
 
 MYSQL_USER="root"
 MYSQL_PASSWORD="password"
@@ -68,19 +68,19 @@ rm $CONFIG_FILE
 
 # Importing Connect Recruit database
 echo "(5/6) Importing Connect(R) database"
-sleep 3
+sleep 5
 
-expect <<EOF
-spawn mysql -u connect -p connect_db < connect_db.sql
-expect "Enter password:"
-send "\r"
-expect eof
-EOF
+mysql -u connect connect_db < connect_db.sql
 
 # Installing node package manager
 echo "(6/6) Installing Node Package Manager"
+sleep 5
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 # Part (1/2) completed
+echo ""
+echo ""
+echo ""
+echo "----------------------"
 echo "SETUP PART 1 COMPLETED"
 echo "----------------------"
