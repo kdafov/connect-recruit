@@ -7,7 +7,7 @@ Connect (R) has all you need it just misses you, your company or your amazing re
 
 Node version: v16.13.0 \
 NPM version: 9.6.2 \ 
-OS: Windows / MacOS
+OS: Windows or MacOS
 
 # Setting up the server and configuring it
 
@@ -34,7 +34,7 @@ Link: `https://www.apachefriends.org/download.html`
 1. Download and Install XAMPP for Windows \
 Link `https://www.apachefriends.org/download.html`
 2. Open XAMPP application 
-3. Start Apache and MySQL modules: 
+3. Start Apache and MySQL modules: \
 ![image](https://user-images.githubusercontent.com/94061728/233851550-0f4a226c-abc6-482e-9a2f-9f99bcb5dcab.png)
 4. Go to web address `localhost/phpmyadmin` and import the database file provided (connect_db.sql)
  
