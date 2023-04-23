@@ -39,7 +39,8 @@ gcloud compute instances create connect-project-vm \
 --image-family=ubuntu-1804-lts \
 --image-project=ubuntu-os-cloud \
 --machine-type=e2-small \
---zone=us-central1-b
+--zone=us-central1-b \
+--tags=http-server
 ``` 
 You should see the following output: \
 ![image](https://user-images.githubusercontent.com/94061728/233811341-68af9092-7549-4df7-8b74-a8ba879b7a3e.png)
@@ -60,13 +61,20 @@ gcloud compute ssh connect-project-vm --zone=us-central1-b
 
 15. Type the following command to pull the Connect app files:
 ```
-mkdir app && cd app && git clone https://github.com/kdafov/connect-recruit.git gcp-update
+mkdir app && cd app && git clone https://github.com/kdafov/connect-recruit.git gcp-update && cd gcp-update && git checkout gcp-update
 ```
 
-16. Run the configuration file by enterring the command: \
+16. Run Configuration file (1/2) by enterring the command: 
+```
+sudo chmod +x setup1.sh && ./setup1.sh
+```
+
+17. Close and re-open CloudShell and login back to the VM (repeat steps 9-11) and navigate to the app directory by enterring `cd app/gcp-update`
+
+18. Run Configuration file (2/2) by enterring the command: \
 ***Note:*** You will be asked to enter information as the script executes
 ```
-
+sudo chmod +x setup2.sh && nvm install 16.20.0 && ./setup2.sh
 ```
 
 
