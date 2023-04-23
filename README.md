@@ -30,7 +30,7 @@ gcloud compute instances create connect-project-vm \
 --zone=us-central1-b \
 --tags=http-server
 ``` 
-***Answer yes to this prompt: API [compute.googleapis.com] not enabled on project [87621126953]. Would you like to enable and retry (this will take a few minutes)? (y/N)?*** \
+***Answer yes to this prompt: API [compute.googleapis.com] not enabled on project [1234567890]. Would you like to enable and retry (this will take a few minutes)? (y/N)?*** \
 You should see the following output: \
 ![image](https://user-images.githubusercontent.com/94061728/233811341-68af9092-7549-4df7-8b74-a8ba879b7a3e.png)
 
@@ -85,12 +85,16 @@ You should see `SETUP COMPLETED` \
 - Press: y
 - Press: Enter
 
-Setup completed! To run app open CloudShell, login to VM (steps 1-3 & 6), navigate to the src folder by enterring `cd app/gcp-update/src` and then run the instance by running the command:
+Setup completed! \
+To run app open CloudShell, login to VM (steps 1-3 & 6), navigate to the src folder by enterring 
+```cd app/gcp-update/src``` 
+and then run the instance by running the command:
 ```
 pm2 start npm --name \"nextapp\" -- start
 ```
 To stop the app: `pm2 stop nextapp` \
 To resume the app: `pm2 start nextapp`
+
 
 ## OPTION 2: Hosting the app locally on MacOS
 
