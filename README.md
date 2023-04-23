@@ -5,9 +5,9 @@ Connect (R) has all you need it just misses you, your company or your amazing re
 
 # Build information
 
-Node version: v16.13.0
-NPM version: 9.6.2
-OS: Windows / MacOS
+Node version: v16.13.0 \
+NPM version: 9.6.2 \ 
+OS: Windows / MacOS 
 
 # Setting up the server and configuring it (Hosting on Google Cloud Platform)
 
