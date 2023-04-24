@@ -40,11 +40,21 @@ Link `https://www.apachefriends.org/download.html`
  
 ***VERIFY:*** When you go to `localhost/phpmyadmin` url in your browser you should be able to see the newly imported database
 
+#### Possible errors
+If you face an error when importing the database: `#1046 - No database selected` what this means is that mySQL requires you to actually create a new database yourself and then import the file to it. \
+Press on the `New` option and create database: \
+![image](https://user-images.githubusercontent.com/94061728/233858150-208df167-eceb-4194-b25b-4c9c551de0ca.png) \
+![image](https://user-images.githubusercontent.com/94061728/233858214-b360443d-4694-49fe-bd2b-eb9230564e83.png) \
+![image](https://user-images.githubusercontent.com/94061728/233858243-cc3f6c23-82a0-4571-b1e4-9c5fadee518b.png)
+
+
 ### SECTION (2) : Installing Node and NPM
 *skip if completed*
 
 1. Download and Install Node from `https://nodejs.org/en/download` 
-2. Verify installation by typing ```node -v``` and ```npm -v``` in Command Prompt (Windows) or Terminal (MacOS) - you should see versions being returned
+2. Verify installation by typing ```node -v``` and ```npm -v``` in Command Prompt (Windows) or Terminal (MacOS) - you should see versions being returned \
+![image](https://user-images.githubusercontent.com/94061728/233858328-013f3d79-8933-406b-a2e1-80e8f39a8603.png) \
+![image](https://user-images.githubusercontent.com/94061728/233858343-ea4f56e5-7887-41e7-b2bc-72fb598f5a70.png)
 
 ### SECTION (3) : Project setup and startup
 1a. On your local machine create a new folder and open a terminal at it and run the command: ``` git clone https://github.com/kdafov/connect-recruit.git ``` \
