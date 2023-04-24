@@ -15,7 +15,7 @@ export default function handler(req, res) {
     const lastRoundData = req.body.lr_data;
     const userResponses = req.body.ur_data;
 
-    let applicationQuery = `INSERT INTO applications(user_id, job_id) VALUES(${userId}, ${jobId})`;
+    let applicationQuery = `INSERT INTO applications(user_id, job_id, status, seen) VALUES(${userId}, ${jobId}, 'pending', 'no')`;
     db.RunQuery(applicationQuery).then(( response ) => {
         const insertId = response.insertId;
 

@@ -47,7 +47,7 @@ const CustomNav = ({ type, notifications }) => {
             if (type === 'admin') {
                 axios.post('/api/loadAdminData', {id}).then(( {data} ) => {
                     setName(data.name);
-                    setLogoRef(data.logo_url === 'No logo found' ? `https://ui-avatars.com/api/?background=182737&color=fff&name=${data.name.replace(' ','+')}&rounded=true` : `/logos/${data.logo_url}`);
+                    setLogoRef(data.logo_url === null ? `https://ui-avatars.com/api/?background=182737&color=fff&name=${data.name.replace(' ','+')}&rounded=true` : data.logo_url);
                 });
             } else if (type === 'company' || type === 'user') {
                 axios.post('/api/loadRecruiterData', {
@@ -93,7 +93,7 @@ const CustomNav = ({ type, notifications }) => {
                 <div className={defaultStyles.sectionRight}>
                     <section className={styles.customNavParent}>
                         <div className={styles.avatarParent}>
-                            <Image src={logoRef || LazyLoadImg} alt='Avatar' width={45} height={45}/>
+                            <img src={logoRef === null ? LazyLoadImg : logoRef} alt='Avatar' />
                             <div className={notifications.concat(custNotification).every(v => v === false) ? '' : styles.notificationIcon}></div>
                         </div>
                         <span className={styles.name}>{name}</span>

@@ -16,14 +16,15 @@ const AdminHomePage = () => {
     const [totalJobs, setTotalJobs] = useState(0);
     const [indJobs, setIndJobs] = useState([0]);
 
-    const [messagesPerDay, setMessagesPerDay] = useState([{"x": "12/04", "y": 0}]);
-    const [jobsPerDay, setJobsPerDay] = useState([{"x": "12/04", "y": 0}]);
+    const [messagesPerDay, setMessagesPerDay] = useState([]);
+    const [jobsPerDay, setJobsPerDay] = useState([]);
 
-    const [applicationPerJob, setApplicationPerJob] = useState([{"x": "12/04", "y": 0}]);
-    const [viewsPerJob, setViewsPerJob] = useState([{"x": "12/04", "y": 0}]);
+    const [applicationPerJob, setApplicationPerJob] = useState([]);
+    const [viewsPerJob, setViewsPerJob] = useState([]);
 
-    const [pie, setPie] = useState(['x',1]);
-    const [bestPerformanceJob, setBestPerformanceJob] = useState([1,3,2,0]);
+    const [pie, setPie] = useState([]);
+    const [bestPerformanceJob, setBestPerformanceJob] = useState([]);
+    const [enoughData, setEnoughData] = useState(true);
 
     useEffect(() => {
         // Load data metrics from database
@@ -32,18 +33,25 @@ const AdminHomePage = () => {
             id: localStorage.getItem('id')
         }).then(( {data} ) => {
             if (data.status === 200) {
-                setTotalRecruiter(data.metric1.A);
-                setIndRecruiter(data.metric1.B);
-                setTotalApplications(data.metric1.C);
-                setIndApplications(data.metric1.D);
-                setTotalJobs(data.metric1.E);
-                setIndJobs(data.metric1.F);
-                setMessagesPerDay(data.metric2.A);
-                setJobsPerDay(data.metric2.B);
-                setApplicationPerJob(data.metric3.A);
-                setViewsPerJob(data.metric3.B);
-                setPie([data.metric4.A, data.metric4.B]);
-                setBestPerformanceJob([data.metric5.applications, data.metric5.views, data.metric5.days_ago, data.metric5.messages, data.metric5.title]);
+                try {
+                    setTotalRecruiter(data.metric1.A);
+                    setIndRecruiter(data.metric1.B);
+                    setTotalApplications(data.metric1.C);
+                    setIndApplications(data.metric1.D);
+                    setTotalJobs(data.metric1.E);
+                    setIndJobs(data.metric1.F);
+                    setMessagesPerDay(data.metric2.A);
+                    setJobsPerDay(data.metric2.B);
+                    setApplicationPerJob(data.metric3.A);
+                    setViewsPerJob(data.metric3.B);
+                    setPie([data.metric4.A, data.metric4.B]);
+                    setBestPerformanceJob([data.metric5.applications, data.metric5.views, data.metric5.days_ago, data.metric5.messages, data.metric5.title]);
+                    if (data.metric5.title === null) {
+                        setEnoughData(false)
+                    }
+                } catch (e) {
+                    setEnoughData(false);
+                }
             }
         })
     }, [])
@@ -63,6 +71,7 @@ const AdminHomePage = () => {
     
     return (
         <section className={s.main}>
+            {enoughData ? <>
             <div className={s.quickStat}>
                 {SmallDataDisplay(totalRecruiter, indRecruiter, 'Recruiters', 100, 100, 1)}
                 {SmallDataDisplay(totalApplications, indApplications, 'Applications', 80, 100, 2)}
@@ -101,6 +110,7 @@ const AdminHomePage = () => {
                 <PieCircle labels={pie[0]} series={pie[1]} h={280} w={350} />
                 <Radar title={`Best performing job (${bestPerformanceJob[4]})`} data={bestPerformanceJob} h={280} w={350} />
             </div>
+            </> : <h2>There is not enough data for statistics.</h2>}
         </section>
     );
 };

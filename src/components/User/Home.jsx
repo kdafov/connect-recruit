@@ -72,7 +72,7 @@ const Home = () => {
                     <div className={styles.jobAdvertInfo}>
                         <div className={styles.jobAdvertLeft}>
                             <div>
-                                <Image src={'/logos/' + logo} alt={'Company logo'} width={80} height={80} className={styles.companyLogo}/>
+                                <img src={logo} alt={'Company logo'} className={styles.companyLogo}/>
                             </div>
                             <div>
                                 <span className={styles.jobTitle}>{company}</span>

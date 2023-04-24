@@ -12,7 +12,7 @@ export default function handler(req, res) {
         // Update the 'Company Details' section of the profile settings
         const name = db.escapeChar(req.body.name);
         const email = db.escapeChar(req.body.email);
-        const logoURL = db.escapeChar(req.body.logoURL);
+        const logoURL = req.body.logoURL;
         const description = db.escapeChar(req.body.description);
         let query;
 

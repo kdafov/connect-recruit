@@ -32,7 +32,6 @@ import Tooltip from '@mui/material/Tooltip';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
-import LazyLoadImg from '@/public/images/lazy_load_img.png';
 
 const AdminProfile = () => {
     const Alert = forwardRef(function Alert(props, ref) {
@@ -137,8 +136,8 @@ const AdminProfile = () => {
                 document.getElementById('companyName').value = data.name;
                 document.getElementById('companyEmail').value = data.email;
                 setName(data.name);
-                setLogoURL(data.logo_url);
-                setDescription(data.company_description);
+                setLogoURL(data.logo_url === null ? '' : data.logo_url);
+                setDescription(data.company_description === null ? '' : data.company_description);
                 setDirectMessages(data.direct_messages === 1 ? true : false);
                 setNotifications(data.notifications === 1 ? true : false);
                 setRecruitersList(data.recruiters);
@@ -149,7 +148,7 @@ const AdminProfile = () => {
 
     const updateCompanyDetails = () => {
         // Check if company logo and description is uploaded
-        if (logoURL === 'No logo found') {
+        if (logoURL === null || logoURL === '') {
             raiseAlert('Please upload a company logo', 'error');
             return;
         }
@@ -381,7 +380,6 @@ const AdminProfile = () => {
         return () => { clearTimeout(timeoutId); };
     }, [clickCount]);
 
-
     return(
         <section className={styles.main}>
             <span className={styles.title}>Profile settings</span>
@@ -407,7 +405,7 @@ const AdminProfile = () => {
                             <TextField id="companyName" label="Company Name" variant="outlined" size='small' sx={{'margin': '25px 0px 7px'}} defaultValue={' '} className={styles.textField} />
                             <TextField id="companyEmail" label="Company Email" variant="outlined" size='small' sx={{'margin': '15px 0px 30px'}} defaultValue={' '} className={styles.textField} />
                             <div className={styles.logoUploadContainer}>
-                                <span className={styles.logoImageHodler}><b>Logo</b>: {logoURL === 'No logo found' ? 'No logo found' : <Image src={'/logos/' + logoURL || LazyLoadImg} width={100} height={100} alt='Company Logo' className={styles.logoImage}/>}
+                                <span className={styles.logoImageHodler}><b>Logo</b>: {logoURL === null || logoURL === '' ? 'No logo found' : <img src={logoURL} alt='Company Logo' className={styles.logoImage}/>}
                                 </span>
 
                                 <div>
